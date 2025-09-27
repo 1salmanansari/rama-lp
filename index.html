@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama Electricals</title>
+
+    <!-- Favicon - Fixed typo: fevicon -> favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+    <!-- Load constants first, then other scripts WITHOUT defer -->
+    <script async src="./js/constant.js"></script>
+    <script async src="./js/nav.js"></script>
+    <script async src="./js/main.js"></script>
+    <script async src="./js/mission.js"></script>
+    <script async src="./js/products.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <img src="./assets/logo.png" style="max-width: 200px; padding: 1px;" alt="Rama Electricals Logo" />
+                </div>
+            </a>
+            <ul class="nav-menu"></ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Banner Slider -->
+        <section class="banner-slider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Innovation Meets Excellence</h1>
+                    <p>Discover cutting-edge solutions that transform your business and elevate your success to new
+                        heights</p>
+                    <a href="#about" class="cta-button">Explore More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Quality Without Compromise</h1>
+                    <p>Experience premium products designed with precision and crafted for perfection in every detail
+                    </p>
+                    <a href="#products-section" class="cta-button">View Products</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Reliable Electrical Solutions</h1>
+                    <p>Trust in our 25+ years of experience delivering quality motors and pumps for your needs</p>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title fade-in">About Us</h2>
+                <p class="section-subtitle fade-in">
+                    Come into the existence in the year 1995, we "Rama Electricals" are counted among
+                    the foremost organizations engrossed in manufacturing and supplying a broad spectrum of
+                    Electrical Motors & Pumps.
+                </p>
+                <div class="about-content">
+                    <div class="about-text fade-in">
+                        <h3>Our Story</h3>
+                        <p>
+                            We offered product range consists of induction Motors, Single Phase Motors, Three Phase
+                            Motors, Pressure Pump, Self Priming Pump, Etc....
+                        </p>
+                        <p>
+                            We strive to suit the precise demands and needs of our clients by analyzing their needs
+                            personally and taking their needs into consideration.
+                        </p>
+                        <p>
+                            Our highly skilled professionals make use of the quality approved raw material in the
+                            fabrication process of these electrical motors & pumps.
+                        </p>
+                        <p>
+                            Our organization holds immense expertise in manufacturing and supplying
+                            of these products. Apart from this, we are offering these products at industry leading
+                            prices as per the precise requirements of our valuable customers. We export our product all
+                            our the world.
+                        </p>
+                    </div>
+                    <div class="about-image fade-in">
+                        <img src="./assets/about.jpg" style="max-width:100%" alt="About Rama Electricals" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products-section" class="section products">
+            <div class="container">
+                <h2 class="section-title fade-in">Our Products</h2>
+                <p class="section-subtitle fade-in">Explore our comprehensive range of premium products designed to meet
+                    your diverse needs and exceed your expectations.</p>
+                <div class="product-slider-container fade-in">
+                    <div class="product-slider" id="productSlider">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="section mission"></section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Contact Us</h2>
+                <p class="section-subtitle fade-in">Get in touch with our team to discuss how we can help you achieve
+                    your goals and bring your vision to life.</p>
+                <div class="contact-content">
+                    <div class="contact-info fade-in">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong><br>
+                                391/5 Shri Vallabh Marvadi Chali<br>
+                                Opp. Rakhial Udyog Post<br>
+                                Rakhial, Ahmedabad, Gujarat: 380023
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Mobile</strong><br>
+                                +91-926-5934-123
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong><br>
+                                ramaelectricals63@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container fade-in">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <h3>Interactive Map</h3>
+                            <p>Click to view our location on Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div class="products-page">
+        <section class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav">
+                    <a href="#" data-page="main">Home</a>
+                    <span>/</span>
+                    <span>Products</span>
+                    <span>/</span>
+                    <span>Premium Solution A</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-detail-content">
+                    <div class="product-gallery">
+                        <div class="product-main-image" id="mainImage"></div>
+                        <div class="product-thumbnails">
+                            <div class="thumbnail active" data-image="1"></div>
+                            <div class="thumbnail" data-image="2"></div>
+                            <div class="thumbnail" data-image="3"></div>
+                            <div class="thumbnail" data-image="4"></div>
+                        </div>
+                    </div>
+                    <div class="product-info-detail">
+                        <h1 class="product-title">Premium Solution A</h1>
+                        <div class="product-price-detail">₹299.00</div>
+                        <div class="product-description">
+                            <p>Experience the perfect blend of innovation and reliability with our Premium Solution A.
+                                This flagship product represents years of research and development, resulting in a
+                                solution that exceeds industry standards and delivers exceptional value.</p>
+                            <p>Designed with the modern professional in mind, this product combines cutting-edge
+                                technology with intuitive functionality. Whether you're a seasoned expert or just
+                                starting out, you'll appreciate the attention to detail and commitment to quality that
+                                goes into every aspect of this remarkable solution.</p>
+                        </div>
+                        <div class="product-features">
+                            <h3>Key Features</h3>
+                            <ul class="features-list">
+                                <li>Advanced performance optimization for maximum efficiency</li>
+                                <li>Intuitive user interface designed for seamless interaction</li>
+                                <li>Premium materials and construction for long-lasting durability</li>
+                                <li>Smart connectivity features for modern integration</li>
+                                <li>Comprehensive warranty and professional support</li>
+                                <li>Eco-friendly design with sustainable manufacturing</li>
+                                <li>Regular software updates and feature enhancements</li>
+                            </ul>
+                        </div>
+                        <button class="buy-button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
