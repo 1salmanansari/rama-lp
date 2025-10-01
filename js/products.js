@@ -19,7 +19,7 @@ const generateProductSlider = () => {
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
-                <ul>
+                <ul class="features-list">
                     ${product.specs.map(spec =>
         `<li><span class="spec-label">${spec.label}:</span> <span class="spec-value">${spec.value}</span></li>`
     ).join('')}
@@ -57,8 +57,8 @@ const renderProducts = (containerId = 'productSlider') => {
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
-                <ul>
-                    ${product.specs.map(spec =>
+                <ul class="features-list">
+                   ${product.specs.map(spec =>
         `<li><span class="spec-label">${spec.label}:</span> <span class="spec-value">${spec.value}</span></li>`
     ).join('')}
                 </ul>

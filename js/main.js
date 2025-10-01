@@ -1,3 +1,5 @@
+// js/main.js
+
 // Navigation functionality
 const navLinks = document.querySelectorAll('.nav-link');
 const dropdownItems = document.querySelectorAll('.dropdown-item');
@@ -69,17 +71,18 @@ dropdownItems.forEach(item => {
 
         // Remove active class from all main nav links
         navLinks.forEach(l => l.classList.remove('active'));
-
-        // Close mobile menu
         navMenu.classList.remove('active');
 
         if (item.dataset.page === 'products') {
-            // Show products page with specific product
-            mainContent.style.display = 'none';
-            productsPage.style.display = 'block';
-            updateProductDetails(item.dataset.product);
+            const productId = item.dataset.product;
+            const product = getProductById(productId); // From products.js
+
+            if (product) {
+                mainContent.style.display = 'none';
+                productsPage.style.display = 'block';
+                renderProductDetail(product); // New function
+            }
         } else if (item.dataset.section) {
-            // Smooth scroll to section
             mainContent.style.display = 'block';
             productsPage.style.display = 'none';
             const section = document.getElementById(item.dataset.section);
@@ -89,6 +92,53 @@ dropdownItems.forEach(item => {
         }
     });
 });
+
+function renderProductDetail(product) {
+    // Breadcrumb
+    const breadcrumbNav = document.querySelector('.breadcrumb-nav');
+    breadcrumbNav.innerHTML = `
+        <a href="#" data-page="main">Home</a>
+        <span>/</span>
+        <span>${product.name}</span>
+    `;
+
+    // Product title
+    document.getElementById('productTitle').textContent = product.name;
+
+    // Product description
+    document.getElementById('productDesc').innerHTML = product.desc.map(each => `<p>${each}</p>`).join('');
+
+    // Features/specs
+    const featuresList = document.getElementById('features-list');
+    featuresList.innerHTML = product.specs.map(spec =>
+        `<li><span class="spec-label">${spec.label}:</span> <span class="spec-value">${spec.value}</span></li>`
+    ).join('');
+
+    // Main Image & Thumbnails
+    const mainImage = document.getElementById('mainImage');
+    // mainImage.style.background = `url('${product.image}') center/cover no-repeat`;
+    mainImage.innerHTML = `<img src='${product.image}' class="product-banner" />`;
+
+    const thumbnailsContainer = document.getElementById('productThumb');
+    thumbnailsContainer.innerHTML = product.paths.map((each, i) => {
+        return (
+            `<div class="thumbnail active">
+            <image data-path='${each}' src='${each}' />
+            </div>`
+        )
+    }).join('');
+
+    // Thumbnail click functionality
+    thumbnailsContainer.querySelectorAll('.thumbnail').forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+            const image = thumb.getElementsByTagName('img');
+            if (image && image[0]) {
+                mainImage.innerHTML = `<img src='${image[0].dataset.path}' class="product-banner" />`;
+
+            }
+        });
+    });
+}
 
 // Function to update product details based on selection
 function updateProductDetails(productType) {
@@ -280,11 +330,6 @@ document.querySelectorAll('.product-slide').forEach(slide => {
 document.querySelector('.map-placeholder').addEventListener('click', () => {
     // In a real implementation, this would open Google Maps
     alert('Opening Google Maps... (This would link to your actual location)');
-});
-
-// Buy button functionality
-document.querySelector('.buy-button').addEventListener('click', () => {
-    alert('Product added to cart! (This would integrate with your e-commerce system)');
 });
 
 // Initialize page

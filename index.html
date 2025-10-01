@@ -1,23 +1,27 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rama Electricals – Pumps, Motors, and Innovative Electrical Solutions." />
+    <meta name="keywords" content="Pumps, Motors, Submersible, Centrifugal Pump, Rama Electricals" />
+    <meta name="author" content="Rama Electricals" />
     <title>Rama Electricals</title>
 
     <!-- Favicon - Fixed typo: fevicon -> favicon -->
     <link rel="shortcut icon" href="./assets/favicon.ico">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/all.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 
     <!-- Load constants first, then other scripts WITHOUT defer -->
-    <script async src="./js/constant.js"></script>
+    <script src="./js/constant.js"></script>
     <script async src="./js/nav.js"></script>
-    <script async src="./js/main.js"></script>
     <script async src="./js/mission.js"></script>
+    <script async src="./js/main.js"></script>
     <script async src="./js/products.js"></script>
 </head>
 
@@ -185,11 +189,6 @@
         <section class="breadcrumb">
             <div class="container">
                 <nav class="breadcrumb-nav">
-                    <a href="#" data-page="main">Home</a>
-                    <span>/</span>
-                    <span>Products</span>
-                    <span>/</span>
-                    <span>Premium Solution A</span>
                 </nav>
             </div>
         </section>
@@ -199,38 +198,18 @@
                 <div class="product-detail-content">
                     <div class="product-gallery">
                         <div class="product-main-image" id="mainImage"></div>
-                        <div class="product-thumbnails">
-                            <div class="thumbnail active" data-image="1"></div>
-                            <div class="thumbnail" data-image="2"></div>
-                            <div class="thumbnail" data-image="3"></div>
-                            <div class="thumbnail" data-image="4"></div>
+                        <div id="productThumb" class="product-thumbnails">
                         </div>
                     </div>
                     <div class="product-info-detail">
-                        <h1 class="product-title">Premium Solution A</h1>
-                        <div class="product-price-detail">₹299.00</div>
-                        <div class="product-description">
-                            <p>Experience the perfect blend of innovation and reliability with our Premium Solution A.
-                                This flagship product represents years of research and development, resulting in a
-                                solution that exceeds industry standards and delivers exceptional value.</p>
-                            <p>Designed with the modern professional in mind, this product combines cutting-edge
-                                technology with intuitive functionality. Whether you're a seasoned expert or just
-                                starting out, you'll appreciate the attention to detail and commitment to quality that
-                                goes into every aspect of this remarkable solution.</p>
-                        </div>
+                        <h1 id="productTitle" class="product-title"></h1>
+                        <div id="productDesc" class="product-description"></div>
                         <div class="product-features">
                             <h3>Key Features</h3>
-                            <ul class="features-list">
-                                <li>Advanced performance optimization for maximum efficiency</li>
-                                <li>Intuitive user interface designed for seamless interaction</li>
-                                <li>Premium materials and construction for long-lasting durability</li>
-                                <li>Smart connectivity features for modern integration</li>
-                                <li>Comprehensive warranty and professional support</li>
-                                <li>Eco-friendly design with sustainable manufacturing</li>
-                                <li>Regular software updates and feature enhancements</li>
+                            <ul id="features-list" class="features-list">
+
                             </ul>
                         </div>
-                        <button class="buy-button">Add to Cart</button>
                     </div>
                 </div>
             </div>

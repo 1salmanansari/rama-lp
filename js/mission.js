@@ -1,3 +1,5 @@
+// js/mission.js
+
 // Mission section data
 const missionData = {
     title: "Our Mission",
